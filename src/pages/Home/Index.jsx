@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../../components/Navbar";
+import Navbar from "../../components/navbar";
 import { Container, Row, Col } from "react-bootstrap";
 import "./Home.css";
 
@@ -13,8 +13,12 @@ import ImgTrash from "../../assets/image/trash.png";
 // Component
 import Achievement from "../../components/achievement";
 import CardPost from "../../components/card";
+import Sidebar from "../../components/category";
+import Notification from "../../components/notification";
 
 export default function Home() {
+  const loop = [1, 2, 3, 4, 5];
+
   return (
     <>
       <Navbar />
@@ -23,7 +27,7 @@ export default function Home() {
           <img src={ImgHero} className="img-hero" alt="" />
           <Row>
             <Col md={8}>
-              <div className="d-flex m-3" style={{ position: "relative" }}>
+              <div className="d-flex mt-3" style={{ position: "relative" }}>
                 {/* Profile */}
                 <div style={{ width: "70%" }}>
                   <div className="d-flex justify-content-center container-profile">
@@ -79,16 +83,20 @@ export default function Home() {
           </Row>
         </div>
         {/* Container */}
-        <Container fluid className="mt-3">
-          <Row className="d-flex justify-content-center">
+        <div className="mt-3 ">
+          <Row className="">
             <Col md={5} className="">
               <Achievement />
+              <Notification />
+              <Sidebar />
             </Col>
             <Col md={7}>
-              <CardPost />
+              {loop.map((item) => (
+                <CardPost />
+              ))}
             </Col>
           </Row>
-        </Container>
+        </div>
       </Container>
     </>
   );
