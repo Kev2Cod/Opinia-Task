@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../../components/Navbar/Index";
+import Navbar from "../../components/Navbar";
 import { Container, Row, Col } from "react-bootstrap";
 import "./Home.css";
 
@@ -10,12 +10,16 @@ import ImgCamera from "../../assets/image/camera.png";
 import ImgCameraProfile from "../../assets/image/camera-profile.png";
 import ImgTrash from "../../assets/image/trash.png";
 
+// Component
+import Achievement from "../../components/achievement";
+import CardPost from "../../components/card";
+
 export default function Home() {
   return (
     <>
       <Navbar />
       <Container style={{ height: "10000px" }}>
-        <div className="bg-white shadow-sm ">
+        <div className="bg-white shadow-sm mt-2">
           <img src={ImgHero} className="img-hero" alt="" />
           <Row>
             <Col md={8}>
@@ -74,15 +78,17 @@ export default function Home() {
             </Col>
           </Row>
         </div>
-
-        <Row>
-          <Col md={5}>
-            <h1>Test</h1>
-          </Col>
-          <Col md={7}>
-            <h1>Test</h1>
-          </Col>
-        </Row>
+        {/* Container */}
+        <Container fluid className="mt-3">
+          <Row className="d-flex justify-content-center">
+            <Col md={5} className="">
+              <Achievement />
+            </Col>
+            <Col md={7}>
+              <CardPost />
+            </Col>
+          </Row>
+        </Container>
       </Container>
     </>
   );
