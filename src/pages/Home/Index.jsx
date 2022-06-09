@@ -15,6 +15,7 @@ import Achievement from "../../components/achievement";
 import CardPost from "../../components/card";
 import Sidebar from "../../components/category";
 import Notification from "../../components/notification";
+import Features from "../../components/features";
 
 export default function Home() {
   const loop = [1, 2, 3, 4, 5];
@@ -23,13 +24,14 @@ export default function Home() {
     <>
       <Navbar />
       <Container style={{ height: "10000px" }}>
+        <Features />
         <div className="bg-white shadow-sm mt-2">
           <img src={ImgHero} className="img-hero" alt="" />
           <Row>
             <Col md={8}>
               <div className="d-flex mt-3" style={{ position: "relative" }}>
                 {/* Profile */}
-                <div style={{ width: "70%" }}>
+                <div style={{ width: "60%" }} className="">
                   <div className="d-flex justify-content-center container-profile">
                     <img src={ImgProfile} className="img-profile" alt="" />
                     <img src={ImgCameraProfile} className="profile-camera-icon" alt="" />
@@ -39,18 +41,18 @@ export default function Home() {
                 <div style={{ position: "relative" }}>
                   {/* Status User */}
                   <div className="status-user">
-                    <Row className="text-center p-2">
-                      <Col sm={4} className="">
-                        <span>Postingan</span>
+                    <Row className="text-center py-2 px-3">
+                      <Col sm={4}>
+                        <span className="text-var-gray-dark">Postingan</span>
                         <span className="fw-bold mt-2">12</span>
                       </Col>
                       <Col sm={4}>
-                        <span>Mengikuti</span>
-                        <span className="fw-bold mt-2">12</span>
+                        <span className="text-var-gray-dark">Mengikuti</span>
+                        <span className="fw-bold mt-2">5</span>
                       </Col>
                       <Col sm={4}>
-                        <span>Pengikut</span>
-                        <span className="fw-bold mt-2">12</span>
+                        <span className="text-var-gray-dark">Pengikut</span>
+                        <span className="fw-bold mt-2">9</span>
                       </Col>
                     </Row>
                   </div>
@@ -67,7 +69,7 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <div className="">
+                  <div className="text-var-gray-dark">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi dolor atque facilis. Nisi molestias nulla nemo perspiciatis eos...</p>
                   </div>
                 </div>
@@ -76,6 +78,7 @@ export default function Home() {
             <Col md={4} className="text-end" style={{ position: "relative" }}>
               <div className="d-flex gap-2 justify-content-end me-4 btn-hero">
                 <img src={ImgCamera} alt="" />
+
                 <img src={ImgTrash} alt="" />
               </div>
               <button className="btn-var-green mt-3 me-4">Edit Profil</button>
